@@ -1,0 +1,61 @@
+.img {
+  width:40px;
+  margin-right:8px;
+}
+
+.info{
+  word-wrap: break-word;
+  flex:1;
+  overflow: hidden;
+}
+
+.name{
+  margin-bottom:4px;
+  text-decoration: none;
+  color: #424242;
+}
+
+.box{
+  margin-bottom: 0.5em;
+  display: flex;
+}
+
+.res{
+  margin-bottom: 2em;
+  margin-left: 1.5rem;
+  display: flex;
+}
+
+.comment{
+  overflow: hidden;
+  color: #666;
+  line-height: 1.2;
+  font-weight: normal;
+}
+
+.col{
+  width:100%;
+}
+
+.none{
+  display: none;
+}
+
+.buttonBox{
+  margin-bottom:1.5em;
+}
+
+.button{
+  color: #666;
+  border: none;
+  vertical-align: top;
+  font-weight: normal;
+  text-decoration: none;
+  box-shadow: none;
+  background: 0 0;
+  margin:4px 0;
+  outline: 0;
+}
+.button:focus {
+  font-weight: bold;
+}

@@ -1,0 +1,13 @@
+.content{
+  padding: 48px 24px 24px 24px;
+  font-size: 3em;
+  color: #757575;
+  background: #F5F5F6;
+}
+
+@media screen and (max-width: 960px){
+  .content {
+    font-size: 2em;
+    padding:24px 8px 12px 8px;
+  }
+}

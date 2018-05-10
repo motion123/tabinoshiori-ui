@@ -1,0 +1,25 @@
+.flexContainer{
+  position: fixed;
+  top:0;
+  width:100%;
+  z-index:100;
+  display:flex;
+  justify-content: flex-start;
+  background: #00BCD4;
+  align-items: center;
+  box-shadow: rgba(0, 0, 0, 0.20) 0 2px 2px;
+}
+
+.title{
+  font-size:1.5em;
+  margin:0 24px;
+  color:white;
+}
+
+.iconmenu{
+  margin-left: auto;
+}
+
+.contentbody{
+  margin-top:48px;
+}

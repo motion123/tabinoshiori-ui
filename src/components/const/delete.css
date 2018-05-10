@@ -1,0 +1,15 @@
+.body {
+  padding:0 !important;
+}
+
+.content{
+  width:200px !important;
+}
+
+.header{
+  border-bottom:0 !important;
+}
+
+.action{
+  border-top: 0 !important;
+}

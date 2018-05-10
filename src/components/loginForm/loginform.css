@@ -1,0 +1,26 @@
+.parent {
+  height: 100%;
+  width: 100%;
+}
+
+.button {
+  margin-left: 16px;
+}
+
+.form {
+  padding:24px;
+}
+
+.buttonDiv {
+  margin-top:16px;
+  text-align: right;
+}
+
+.contents {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+

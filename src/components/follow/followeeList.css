@@ -1,0 +1,19 @@
+.margin{
+  margin:24px 0;
+}
+
+.box {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.name{
+  display: block;
+  color:#525252;
+  margin-left:16px;
+}
+
+.name:hover{
+  border-bottom: 1px solid #525252;
+}

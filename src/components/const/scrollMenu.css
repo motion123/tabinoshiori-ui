@@ -1,0 +1,42 @@
+.nonfixed{
+  position:relative;
+  border-bottom: #E1E1E1 1px solid;
+  transition-property: all;
+  transition-duration: 300ms;
+  transition-delay: 0ms;
+  transition-timing-function: ease;
+  color:#525252;
+
+}
+
+.fixed{
+  width:100%;
+  position:fixed;
+  left:0;
+  color:white;
+  background-color: #00BCD4;
+  animation: fixe 600ms;
+  animation-iteration-count: 1;
+  box-shadow: rgba(0, 0, 0, 0.35) 0 3px 3px;
+  z-index:1000;
+  top:48px;
+}
+
+@keyframes fixe {
+  0%{
+    top:0;
+    z-index:0;
+    box-shadow: none;
+  }
+  45%{
+    top:48px;
+    color:white;
+    z-index:10;
+    box-shadow: none;
+  }
+  100%{
+    top:48px;
+    z-index:1000;
+    box-shadow: rgba(0, 0, 0, 0.35) 0 3px 3px;
+  }
+}

@@ -1,0 +1,60 @@
+
+.Grid{
+  padding:0;
+}
+
+.container{
+  background:white;
+  margin:auto;
+  max-width:960px;
+  padding:0 24px;
+}
+
+.box{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  padding-top:50px;
+  padding-bottom:25px;
+}
+.sen{
+  border:none;
+  border-top: 1px solid #eee;
+}
+
+.name{
+  margin-left:24px;
+  font-size:3em;
+  flex-shrink: 1;
+  word-wrap:break-word;
+  color:#757575;
+}
+
+.followbox{
+  margin-left:auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.follower{
+  margin: 8px 0;
+}
+
+.followee{
+  margin:8px 0;
+}
+
+@media screen and (max-width:960px) {
+  .container{
+    padding:0;
+  }
+  .box{
+    padding:20px 16px 16px;
+
+  }
+  .name{
+    font-size:1.5em;
+    margin-left:16px;
+  }
+}

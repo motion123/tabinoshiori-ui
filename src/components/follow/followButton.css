@@ -1,0 +1,10 @@
+
+.box{
+  position: absolute !important;
+  bottom:0;
+  right:0;
+}
+
+.button{
+  color: rgb(255, 255, 255) !important;
+}
