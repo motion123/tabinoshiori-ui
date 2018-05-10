@@ -3,5 +3,8 @@
  */
 export const root = '/';
 export const login = '/login';
+
+export const CB = '/bookmark';
+
 export const user = '/user/:userId';
 export const search = '/search/:word';

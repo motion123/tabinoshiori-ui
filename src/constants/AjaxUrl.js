@@ -8,6 +8,7 @@ export const LOGIN_URL = base + "users/login";
 export const TOKEN_AUTH_URL = base + "users/auth/";
 export const NEWUSER_URL = base + "users/new";
 
+export const CBR = base + "bookmark/new";
 
 export const COMMENT = base + "comment/";
 

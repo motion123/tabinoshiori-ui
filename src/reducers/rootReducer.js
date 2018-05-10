@@ -6,7 +6,7 @@ import { combineReducers } from 'redux';
 import loginFormInput from './login/loginform';
 import loginInfo from './login/loginrequest';
 import app from './app';
-import urlParser from './addVideo/urlParser';
+import createBookmark from './Bookmark/createBookmark';
 import snackbar from './addVideo/snacbar';
 import deleteData from './delete/daleteData';
 import comment from './comment/comment';
@@ -23,7 +23,7 @@ const rootReducer = combineReducers({
   loginFormInput,
   loginInfo,
   app,
-  urlParser,
+  createBookmark,
   snackbar,
   deleteData,
   comment,
