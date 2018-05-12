@@ -7,6 +7,8 @@ import loginFormInput from './login/loginform';
 import loginInfo from './login/loginrequest';
 import app from './app';
 import createBookmark from './Bookmark/createBookmark';
+import bookmarkInfo from './Bookmark/bookmarkInfo';
+import addTripInfo from './Bookmark/addTripInfo';
 import snackbar from './addVideo/snacbar';
 import deleteData from './delete/daleteData';
 import comment from './comment/comment';
@@ -24,6 +26,8 @@ const rootReducer = combineReducers({
   loginInfo,
   app,
   createBookmark,
+  bookmarkInfo,
+  addTripInfo,
   snackbar,
   deleteData,
   comment,

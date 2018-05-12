@@ -8,7 +8,10 @@ export const LOGIN_URL = base + "users/login";
 export const TOKEN_AUTH_URL = base + "users/auth/";
 export const NEWUSER_URL = base + "users/new";
 
+export const BOOKMARK = base + "bookmark/";
 export const CBR = base + "bookmark/new";
+export const CHANGE_TRIP_INFO = base + "bookmark/edit/trip/order";
+export const ADD_TRIP_INFO = base +"bookmark/edit/trip";
 
 export const COMMENT = base + "comment/";
 

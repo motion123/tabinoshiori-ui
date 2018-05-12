@@ -4,7 +4,8 @@
 export const root = '/';
 export const login = '/login';
 
-export const CB = '/bookmark';
+export const CB = '/bookmark/new';
+export const bookmarkInfo = '/bookmark/:bookmarkId';
 
 export const user = '/user/:userId';
 export const search = '/search/:word';

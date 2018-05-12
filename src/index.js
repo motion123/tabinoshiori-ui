@@ -8,6 +8,7 @@ import { Provider } from 'react-redux';
 import configureStore from './store/configureStore';
 import login from './containers/login';
 import CreateBookmark from './containers/Bookmark/createBookmark';
+import BookmarkInfo from './containers/Bookmark/bookmarkInfo';
 import rootSaga from './sagas/rootsaga';
 import createSagaMiddleware from 'redux-saga';
 import { Router,Route, IndexRoute, browserHistory } from 'react-router'
@@ -35,6 +36,7 @@ ReactDOM.render(
           </Route>
           <Route path ={Root.login} component={login}/>
           <Route path ={Root.CB} component={CreateBookmark}/>
+          <Route path ={Root.bookmarkInfo} component={BookmarkInfo}/>
       </Route>
     </Router>
   </Provider>,

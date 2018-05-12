@@ -16,6 +16,9 @@ export default function* rootSaga() {
   yield takeEvery(AppType.LOGOUT, User.onLogout);
 
   yield takeEvery(AppType.CBRE, Bookmark.postCreateBookmark);
+  yield takeEvery(AppType.BIRE, Bookmark.getBookmarkInfo);
+  yield takeEvery(AppType.BTIR, Bookmark.postChangeTripInfo);
+  yield takeEvery(AppType.ADD_TRIP_INFO_REQUEST, Bookmark.postAddTripInfo);
 
   yield takeEvery(AppType.DELETE_DATA_REQUEST,Delete.deleteData);
   yield takeEvery(AppType.COMMENT_LIST_REQUEST,Comment.fetchCommentList);
