@@ -5,16 +5,17 @@ import React from 'react'
 import { connect } from 'react-redux'
 import bookmarkInfo from '../../components/bookmark/bookmarkInfo'
 import * as bookmarkAction from '../../actions/bookmark'
+import * as tripinfoAction from '../../actions/tripinfo';
 
 function mapStateToProps(state) {
   return {
     isFetching: state.bookmarkInfo.isFetching,
     bookmark: state.bookmarkInfo.bookmark,
     trip_info:state.bookmarkInfo.trip_info,
+
   }
 }
 
-// clickでactionを飛ばず
 function mapDispatchToProps(dispatch) {
   return {
     requestInfo: (data) =>{
@@ -25,12 +26,17 @@ function mapDispatchToProps(dispatch) {
     },
     requestChangeTripInfo: (data) => {
       dispatch(bookmarkAction.requestChangeTripInfo(data))
+    },
+    openEditDialog: (data,description) => {
+      dispatch(tripinfoAction.openEditDialog(data,description))
+    },
+    openDeleteDialog: (data) => {
+      dispatch(tripinfoAction.openDeleteDialog(data))
     }
   }
 }
 
 
-//connect関数でReduxとReactコンポーネントを繋ぐ
 export default connect(
   mapStateToProps,
   mapDispatchToProps

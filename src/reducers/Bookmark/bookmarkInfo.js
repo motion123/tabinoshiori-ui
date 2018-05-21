@@ -7,10 +7,11 @@ import * as AppType from '../../constants/App';
 const initialState = {
   isFetching: false,
   bookmark: {
+    _id:"",
     title:"",
     description:"",
-    other_user:[],
-    thumbnail:""
+    otherUser:[],
+    thumbnail:[]
   },
   trip_info:[],
 };
@@ -43,6 +44,45 @@ export default function bookmarkInfo(state = initialState, action) {
           ...state.trip_info,
           action.data,
         ]
+      });
+    case AppType.TRIP_INFO_EDIT_RESULT:
+      return Object.assign({},state, {
+        trip_info: state.trip_info.map((val) => {
+          if(val._id === action.data._id){
+            val.description = action.data.description;
+            val.thumbnail.push(action.data.thumbnail);
+          }
+          return val;
+        })
+      });
+    case AppType.TRIP_INFO_DELETE_RESULT:
+      return Object.assign({},state, {
+        trip_info: state.trip_info.filter((val) => {
+          if(val._id !== action.data) return val;
+        })
+      });
+    case AppType.ADD_PERMISSION_RESULT:
+      return Object.assign({},state, {
+        bookmark: {
+          _id: state.bookmark._id,
+          title: state.bookmark.title,
+          description: state.bookmark.description,
+          otherUser: [...state.bookmark.otherUser,action.data],
+          thumbnail: state.bookmark.thumbnail,
+        }
+      });
+    case AppType.DEL_PERMISSION_RESULT:
+      return Object.assign({},state, {
+        bookmark: {
+          _id: state.bookmark._id,
+          title: state.bookmark.title,
+          description: state.bookmark.description,
+          otherUser: [...state.bookmark.otherUser.filter((val) => {
+            if (val._id !== action.data) return val;
+            }
+          )],
+          thumbnail: state.bookmark.thumbnail,
+        }
       });
     default:
       return state

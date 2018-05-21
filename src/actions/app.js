@@ -13,7 +13,6 @@ export function auth_request(token) {
 export function auth_result(success) {
   return {
     type: AppType.AUTH_RESULT,
-    id: success._id,
     user_id: success.user_id
   }
 }

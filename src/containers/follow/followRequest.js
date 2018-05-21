@@ -17,17 +17,11 @@ function mapStateToProps(state) {
 // clickでactionを飛ばず
 function mapDispatchToProps(dispatch) {
   return {
-    requestIsFollowBoard:(id) => {
-      dispatch(FollowAction.isFollowBoardRequest(id))
-    },
     requestIsFollowUser:(id) => {
       dispatch(FollowAction.isFollowUserRequest(id))
     },
     requestFollow: (data) => {
       dispatch(FollowAction.followRequest(data))
-    },
-    requestDefollow: (id) => {
-      dispatch(FollowAction.defollowRequest(id))
     },
     requestDefollowUser: (id) => {
       dispatch(FollowAction.defollowUserRequest(id))

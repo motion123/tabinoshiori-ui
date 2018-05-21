@@ -9,7 +9,14 @@ import app from './app';
 import createBookmark from './Bookmark/createBookmark';
 import bookmarkInfo from './Bookmark/bookmarkInfo';
 import addTripInfo from './Bookmark/addTripInfo';
+import tripInfoEdit from './Bookmark/tripinfoedit';
+import deleteTripInfo from './Bookmark/deleteTripInfo';
+import imageUploader from './Bookmark/imageUploader';
+import addPermission from './Bookmark/AddPermission';
+import permissionList from './Bookmark/PermissionList';
 import snackbar from './addVideo/snacbar';
+import userPage from './UserPage/userPage';
+import bookmarkList from './Bookmark/bookmarkList';
 import deleteData from './delete/daleteData';
 import comment from './comment/comment';
 import follow from './follow/follow';
@@ -28,7 +35,14 @@ const rootReducer = combineReducers({
   createBookmark,
   bookmarkInfo,
   addTripInfo,
+  tripInfoEdit,
+  deleteTripInfo,
+  imageUploader,
+  addPermission,
+  permissionList,
   snackbar,
+  userPage,
+  bookmarkList,
   deleteData,
   comment,
   follow,

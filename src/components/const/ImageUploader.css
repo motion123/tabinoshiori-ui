@@ -1,0 +1,29 @@
+.image_box{
+  padding:24px;
+  box-sizing: border-box;
+  height:100%;
+}
+
+.image{
+  position: relative;
+  z-index:3;
+  height:100%;
+  border: solid 3px #cccccc;
+  border-radius: 10px;
+  color: #cccccc;
+  font-size:2em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.loading{
+  position: relative;
+  width:100%;
+  height:100%;
+}
+
+.imageInput{
+  display: none;
+}

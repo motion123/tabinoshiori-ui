@@ -1,0 +1,178 @@
+@import '../../_CSS/main.scss';
+
+.bookmarkList_ul{
+  width:100%;
+  padding: 0;
+  margin:0;
+  position: relative;
+  & li {
+    width: 100%;
+    cursor: move;
+    list-style: none;
+    @include mq() {
+      height: 600px;
+      flex-wrap: nowrap;
+    }
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    & div.line {
+      position:absolute;
+      top:0;
+      width:100%;
+      height:100%;
+      overflow: hidden;
+      &::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        z-index:2;
+        @include mq() {
+          margin-left: 24px;
+          border-left: solid 6px #DDD;
+        }
+        margin-left: 12px;
+        border-left: solid 3px #DDD;
+      }
+      &::before {
+        content: "";
+        border-radius: 50%;
+        @include mq() {
+          width: 16px;
+          height: 16px;
+          top: 36px;
+          left: 24px;
+          transform: translate(-5px, 0px);
+        }
+        top: 36px;
+        left: 12px;
+        width: 10px;
+        height: 10px;
+        background-color: orange;
+        position: absolute;
+        z-index: 4;
+        transform: translate(-3px, 0px);
+      }
+    }
+  }
+  & li:first-child {
+    & div.line {
+      &::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        z-index: 2;
+        @include mq() {
+          margin-top: 36px;
+          margin-left: 24px;
+          border-left: solid 6px #DDD;
+
+        }
+        margin-top: 36px;
+        margin-left: 12px;
+        border-left: solid 3px #DDD;
+      }
+    }
+  }
+  & li:last-child {
+    & div.line {
+      &::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        z-index:2;
+        @include mq() {
+          margin-bottom: 36px;
+          margin-left: 24px;
+          border-left: solid 6px #DDD;
+
+        }
+        margin-bottom: 36px;
+        margin-left: 12px;
+        border-left: solid 3px #DDD;
+      }
+    }
+  }
+}
+
+.bookmarkList_box1{
+  @include mq(){
+    flex-basis: 35%;
+    background-color: #EEE;
+    position: relative;
+  }
+  flex-basis:100%;
+  height:auto;
+  background-color: white;
+}
+
+.bookmarkList_box2{
+  @include mq(md){
+    flex-basis: 65%;
+    border-left:solid 1px #DDD;
+    padding:36px 24px;
+    height:auto;
+  }
+  padding:0 24px;
+  width:100%;
+  border:none;
+  height:300px;
+}
+
+.bookmarkList_content{
+  height:100%;
+  position:relative;
+  @include mq(){
+    padding:36px 48px;
+  }
+  padding:36px 24px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.contentBox{
+  @include mq(){
+    position: sticky;
+    top:36px;
+  }
+}
+
+.bookmarkList_button{
+  position: absolute;
+  z-index:10;
+  bottom:0;
+  right:16px;
+}
+
+.infoImage_box{
+  position:relative;
+  height:100%;
+  width:100%;
+  overflow:hidden
+}
+
+.image{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: auto;
+}
+
+.title{
+  padding:0;
+  margin-top:0;
+  margin-bottom:16px;
+}
+
+.siteName{
+  margin:0;
+}

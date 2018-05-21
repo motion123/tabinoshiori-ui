@@ -8,6 +8,7 @@ const initialState = {
   isPrepared: false,
   isFetching: false,
   isReLogin: false,
+  user_id:"",
 };
 
 export default function auth(state = initialState, action) {
@@ -22,7 +23,11 @@ export default function auth(state = initialState, action) {
         isFetching: false,
         isLogin: true,
         isPrepared: true,
-        userId: action.id,
+        user_id: action.user_id,
+      });
+    case AppType.LOGIN_INFO_RESULT:
+      return Object.assign({}, state, {
+        user_id:action.user_id,
       });
     case AppType.AUTH_FAILED:
       return Object.assign({}, state, {

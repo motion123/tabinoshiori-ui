@@ -37,8 +37,9 @@ import webpack from 'gulp-webpack';
 import webpackConfig from './webpack.config.js';
 import gutil from 'gulp-util';
 import history from 'connect-history-api-fallback';
-import  rename from "gulp-rename";
-
+import sass from 'gulp-sass';
+import autoprefixer from 'gulp-autoprefixer';
+import plumber from 'gulp-plumber';
 
 const $ = gulpLoadPlugins();
 const reload = browserSync.reload;
@@ -286,6 +287,20 @@ gulp.task('generate-service-worker', ['copy-sw-scripts'], () => {
     stripPrefix: rootDir + '/'
   });
 });
+
+gulp.task('convertToCss', function() {
+  gulp.src('./src/components/**/*.scss')
+    .pipe(plumber())
+    .pipe(sass())
+    .pipe(autoprefixer())
+    .pipe(gulp.dest('./src/components/'));
+});
+
+
+gulp.task('cssWatcher', function() {
+  gulp.watch('./src/components/**/*.scss',['convertToCss']);
+});
+
 
 // Load custom tasks from the `tasks` directory
 // Run: `npm install --save-dev require-dir` from the command-line

@@ -13,6 +13,7 @@ function mapStateToProps(state) {
     lng:state.addTripInfo.lng,
     site_name:state.addTripInfo.site_name,
     description:state.addTripInfo.description,
+    open:state.addTripInfo.open,
   }
 }
 
@@ -33,6 +34,12 @@ function mapDispatchToProps(dispatch) {
     },
     changeSiteName:(data) => {
       dispatch(bookmarkAction.changeSiteName(data))
+    },
+    openDialog: () => {
+      dispatch(bookmarkAction.openDialog())
+    },
+    closeDialog: () => {
+      dispatch(bookmarkAction.closeDialog())
     }
   }
 }

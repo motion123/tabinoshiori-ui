@@ -1,0 +1,9 @@
+.container {
+  padding: 0 16px;
+  margin-top: 64px; }
+  @media screen and (min-width: 400px) {
+    .container {
+      padding: 0 7.5%; } }
+
+.box {
+  margin-bottom: 64px; }

@@ -12,9 +12,19 @@ import styles from './loginform.css';
 export default class LoginForm extends React.Component {
 
   render() {
-    const {form, loginInfo,onNewUser, onSubmitReq, newUser,
-      changeName, changeEmail, changePassword} = this.props;
+    const {
+      form,
+      loginInfo,
+      onNewUser,
+      onSubmitReq,
+      newUser,
+      changeName,
+      changeEmail,
+      changePassword
+    } = this.props;
+
     const {message} = loginInfo;
+
     const NameForm = newUser ? (
       <div>
         <TextField

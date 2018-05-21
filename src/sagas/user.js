@@ -18,10 +18,10 @@ export function* isTokenPrepare () {
 }
 
 function* fetchUserAuth(token) {
-  const {response} = yield call(FetchUser.userAuth, token);
-  if (response.data.success) {
+  const {response,error} = yield call(FetchUser.userAuth, token);
+  if (response) {
     yield put(auth_result(response.data));
-  } else {
+  } else if(error) {
     yield put(auth_failed());
     yield put(push('/login'));
   }
@@ -33,7 +33,7 @@ export function* fetchUserLogin (action) {
   if(response.data.success) {
     localStorage.setItem("token",response.data.token);
     yield put(loginInfoResult(response.data));
-    yield put(push('/'));
+    yield put(push('/user/' + response.data.user_id));
   }else if(response.data.error){
     yield fork(errorMessage,response.data.error.errors)
   }

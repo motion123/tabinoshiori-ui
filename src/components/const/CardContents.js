@@ -7,20 +7,20 @@ import {Link} from 'react-router';
 import styles from './CardContents.css';
 import FollowButton from '../../containers/follow/followRequest';
 
-export default class BoardList extends React.Component {
+export default class bookmarkList extends React.Component {
 
   render() {
     const {
-      boardList,
+      bookmarkList,
       onAdmin,
     } = this.props;
 
     let item = [];
 
-    boardList.map((board) =>
+    bookmarkList.map((bookmark,index) =>
       item.push (
         <Col
-          key={board._id}
+          key={bookmark._id + index}
           xs={12}
           sm={4}
           md={3}
@@ -28,32 +28,22 @@ export default class BoardList extends React.Component {
           className={styles.Col}
         >
           <div className={styles.content}>
-            <Link to={"/user/"+ board.user_id + "/" + board._id}>
+            <Link to={"/bookmark/"+ bookmark._id}>
 
               <img
-                src={board.img}
-                className={styles.img}
+                src={bookmark.thumbnail}
+                className={styles.thumbnail}
               />
               <div className={styles.back}>
               <div className={styles.titlebox}>
                 <div className={styles.box}>
                   <div className={styles.title}>
-                    {board.title}
-                  </div>
-                  <div className={styles.subtitle}>
-                    {board.count + "メディア"}
+                    {bookmark.title}
                   </div>
                 </div>
               </div>
                 </div>
             </Link>
-            {
-              onAdmin ? (null):(<FollowButton
-              isBoard={true}
-              boardId={board._id}
-              userId={board._user}
-            />)
-            }
           </div>
         </Col>
       )
@@ -61,7 +51,9 @@ export default class BoardList extends React.Component {
 
 
     return (
-          <Row className={styles.Row}>
+          <Row
+            className={styles.Row}
+          >
               {item}
           </Row>
 

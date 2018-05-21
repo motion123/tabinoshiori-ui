@@ -47,7 +47,8 @@ export function loginInfoResult(data) {
   return{
     type: AppType.LOGIN_INFO_RESULT,
     login: data.success,
-    token: data.token
+    token: data.token,
+    user_id: data.user_id,
   }
 }
 

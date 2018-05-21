@@ -51,10 +51,10 @@ const Content = ({follow,closeDialog}) => (
   <div className={styles.margin}>
     <Link
       onClick={() => closeDialog()}
-      to={"/user/"+ follow.user_id} className={styles.box}>
+      to={"/user/"+ follow._id} className={styles.box}>
       <div className={styles.img}>
         <Avatar
-          src={follow.img}
+          src={follow.thumbnail}
         />
       </div>
       <span className={styles.name}>{follow.name + "さん"}</span>

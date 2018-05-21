@@ -1,0 +1,102 @@
+@import "../../_CSS/main.scss";
+
+.titleBox{
+  @include mq(){
+    height:55vh;
+  }
+    height:40vh;
+  width:100%;
+  overflow: hidden;
+  z-index:2;
+  position: relative;
+  @include centering();
+  & img{
+    position: absolute;
+    z-index:-1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 100%;
+    height: auto;
+    filter: blur(5px);
+  }
+}
+
+div.wordBox {
+  margin:16px 0;
+  -webkit-text-stroke:1px #000;
+  color:white;
+  @include centering();
+  & h1 {
+    padding:0;
+    margin:16px 0;
+    font-size: 2em;
+    @include mq(sm) {
+      font-size: 2.5em;
+    }
+    @include mq(md) {
+      font-size: 3.5em;
+    }
+    @include mq(lg) {
+      font-size: 4em;
+    }
+    @include mq(xl) {
+      font-size: 5em;
+    }
+  }
+  & h2 {
+    padding:0;
+    margin:8px 0;
+    font-size: 1.1em;
+    @include mq(sm) {
+      font-size: 1.4em;
+    }
+    @include mq(md) {
+      font-size: 1.7em;
+    }
+    @include mq(lg) {
+      font-size: 2em;
+    }
+    @include mq(xl) {
+      font-size: 2.3em;
+    }
+  }
+}
+
+
+.permissionBox{
+  display: inherit;
+  position: absolute;
+  z-index:3;
+  bottom:0;
+  right:0;
+  & div.buttonBox {
+    margin-top:24px;
+    margin-bottom:24px;
+    margin-right:24px;
+  }
+}
+
+.tripList{
+  display: flex;
+  width:100%;
+}
+
+.box1{
+  @include mq(xl){
+    display: block;
+    flex-basis:20%;
+    height:auto;
+  }
+  display: none;
+}
+
+.box2{
+  @include mq(xl) {
+    flex-basis: 80%;
+  }
+  flex-basis:100%;
+}
+
+

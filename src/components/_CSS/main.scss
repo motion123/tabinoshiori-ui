@@ -1,0 +1,39 @@
+$breakpoints: (
+  'sm': 'screen and (min-width: 400px)',
+  'md': 'screen and (min-width: 768px)',
+  'lg': 'screen and (min-width: 1000px)',
+  'xl': 'screen and (min-width: 1200px)',
+) !default;
+
+@mixin mq($breakpoint: md) {
+  @media #{map-get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}
+
+@mixin cm{
+  margin:16px 0;
+  @include mq(md){
+    margin:64px 0;
+  }
+}
+
+@mixin centering{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+.container{
+  padding:0 16px;
+  margin-top:64px;
+  @include mq(sm){
+    padding:0 7.5%;
+  }
+}
+
+.box{
+  margin-bottom:64px;
+}

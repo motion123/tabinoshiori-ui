@@ -1,0 +1,47 @@
+@import '../../_CSS/main.scss';
+
+ul.List{
+  margin:0;
+  padding:0;
+  background-color:#170B3B;
+  & li{
+    padding:8px 16px;
+    margin:0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    & span{
+      margin-left:12px;
+      color:orange;
+      font-weight: bold;
+    }
+    & div{
+      display: flex;
+      align-items: center;
+    }
+  }
+}
+
+.headerBox{
+  color:orange;
+  @include centering();
+  & h4{
+    margin: 36px 0;
+
+  }
+}
+
+
+.height{
+  height: 100%;
+}
+
+.cont{
+  height:100%;
+  background: #170B3B;
+}
+
+.editor{
+  position: sticky;
+  top:0;
+}

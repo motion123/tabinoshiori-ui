@@ -33,6 +33,14 @@ export default function FollowerList(state = initialState, action) {
         page: action.data.currentPage + 1,
         isFetching:false
       });
+    case AppType.DEFOLLOW_USER_RESULT:
+      return Object.assign({}, state, {
+        followerCount: state.followerCount - 1
+      });
+    case AppType.FOLLOW_RESULT:
+      return Object.assign({}, state ,{
+        followerCount: state.followerCount + 1
+      });
     case AppType.FOLLOWER_LIST_LAST_PAGE:
       return Object.assign({},state, {
         hasMore: false,

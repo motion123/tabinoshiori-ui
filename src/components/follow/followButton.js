@@ -3,27 +3,17 @@
  */
 import React from 'react';
 import styles from './followButton.css';
-import IconButton from 'material-ui/IconButton';
-import Favorite from 'material-ui/svg-icons/action/favorite';
-import FavoriteBorder from 'material-ui/svg-icons/action/favorite-border';
-
+import RaisedButton from 'material-ui/RaisedButton';
 
 export default class FollowButton extends React.Component {
 
   componentWillMount(){
-    if(this.props.isBoard) {
-      this.props.requestIsFollowBoard(this.props.boardId);
-    }else {
       this.props.requestIsFollowUser(this.props.userId);
-    }
   }
 
   render() {
     const {
-      isBoard,
-      boardId,
       requestFollow,
-      requestDefollow,
       requestDefollowUser,
       userId,
       followList,
@@ -31,27 +21,22 @@ export default class FollowButton extends React.Component {
 
     const postdata = {
       user_id:userId,
-      board_id: boardId,
     };
 
-    const isFollow = isBoard ? (followList.indexOf(boardId) !== -1  ? (true) : (false))
-      : (followList.indexOf(userId) !== -1 ? (true) : (false));
+    let isFollow = followList.indexOf(userId) != 0 ? (true) : (false);
 
     return (
-      <IconButton
-        onTouchTap={isBoard   && !isFollow ? ( () => requestFollow(postdata))
-                 : (isFollow  && !isBoard  ? ( () => requestDefollowUser(userId))
-                 : ((isFollow && isBoard   ? ( () => requestDefollow(boardId))
-                 : (null))
-        ))}
-        className={styles.box}
+      <RaisedButton
+        onTouchTap={isFollow ? ( () => requestFollow(postdata))
+                 : ( () => requestDefollowUser(userId))}
+        primary={isFollow ? (true): (false)}
       >
         {isFollow ? (
-          <Favorite className={styles.button}/>
+          "フォローする"
         ) :(
-          <FavoriteBorder className={styles.button}/>
+          "フォローを解除"
         )}
-      </IconButton>
+      </RaisedButton>
     );
   }
 }

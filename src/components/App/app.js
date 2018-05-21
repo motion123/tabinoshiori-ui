@@ -4,6 +4,8 @@
 import React from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import Loading from '../const/loading';
+import Snackbar from '../../containers/addVideo/snackbar';
+
 
 export default class App extends React.Component {
   componentWillMount() {
@@ -16,7 +18,8 @@ export default class App extends React.Component {
     return isPrepared ? (
       <MuiThemeProvider  >
         <div>
-            {children}
+          <Snackbar/>
+          {children}
         </div>
       </MuiThemeProvider>):
       (<MuiThemeProvider >

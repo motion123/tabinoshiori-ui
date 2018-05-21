@@ -12,19 +12,12 @@ import RaisedButton from 'material-ui/RaisedButton';
 export default class FollowButton extends React.Component {
 
   componentWillMount(){
-    if(this.props.isBoard) {
-      this.props.requestIsFollowBoard(this.props.boardId);
-    }else {
       this.props.requestIsFollowUser(this.props.userId);
-    }
   }
 
   render() {
     const {
-      isBoard,
-      boardId,
       requestFollow,
-      requestDefollow,
       requestDefollowUser,
       userId,
       followList,
@@ -32,19 +25,15 @@ export default class FollowButton extends React.Component {
 
     const postdata = {
       user_id:userId,
-      board_id: boardId,
     };
 
-    const isFollow = isBoard ? (followList.indexOf(boardId) !== -1  ? (true) : (false))
-      : (followList.indexOf(userId) !== -1 ? (true) : (false));
+    const isFollow = followList.indexOf(userId) !== -1 ? (true) : (false);
 
     return (
       <RaisedButton
-        onTouchTap={isBoard   && !isFollow ? ( () => requestFollow(postdata))
-                 : (isFollow  && !isBoard  ? ( () => requestDefollowUser(userId))
-                 : ((isFollow && isBoard   ? ( () => requestDefollow(boardId))
-                 : (null))
-        ))}
+        onTouchTap={isFollow ? ( () => requestFollow(postdata))
+          : ( () => requestDefollowUser(userId))
+        }
         secondary={isFollow ? (true) : (false)}
         icon=   {isFollow ? (
           <Favorite className={styles.button}/>

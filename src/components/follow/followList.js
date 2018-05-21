@@ -29,7 +29,6 @@ export default class FollowList extends React.Component {
               key={follow._id}
               follow={follow}
               follower={follow.follower}
-              follow_board={follow.board}
             />
         );
     });
@@ -48,7 +47,7 @@ export default class FollowList extends React.Component {
   }
 }
 
-const Content = ({follow,follow_board,follower}) => (
+const Content = ({follow,follower}) => (
   <div className={styles.margin}>
     <Link
       onClick={() => closeDialog()}

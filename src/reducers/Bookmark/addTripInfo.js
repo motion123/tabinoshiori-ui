@@ -10,6 +10,7 @@ const initialState = {
   lng:"",
   description:"",
   site_name:"",
+  open:false,
 };
 
 export default function addTripInfo(state = initialState, action) {
@@ -45,6 +46,14 @@ export default function addTripInfo(state = initialState, action) {
     case AppType.ADD_TRIP_INFO_FAILD:
       return Object.assign({}, state, {
         isFetching:false
+      });
+    case AppType.TRIP_OPEN_DIALOG:
+      return Object.assign({}, state, {
+        open:true,
+      });
+    case AppType.TRIP_CLOSE_DIALOG:
+      return Object.assign({}, state, {
+        open:false,
       });
     default:
       return state

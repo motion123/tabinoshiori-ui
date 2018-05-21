@@ -1,0 +1,161 @@
+.container {
+  padding: 0 16px;
+  margin-top: 64px; }
+  @media screen and (min-width: 400px) {
+    .container {
+      padding: 0 7.5%; } }
+
+.box {
+  margin-bottom: 64px; }
+
+.bookmarkList_ul {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  position: relative; }
+  .bookmarkList_ul li {
+    width: 100%;
+    cursor: move;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative; }
+    @media screen and (min-width: 768px) {
+      .bookmarkList_ul li {
+        height: 600px;
+        flex-wrap: nowrap; } }
+    .bookmarkList_ul li div.line {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden; }
+      .bookmarkList_ul li div.line::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        z-index: 2;
+        margin-left: 12px;
+        border-left: solid 3px #DDD; }
+        @media screen and (min-width: 768px) {
+          .bookmarkList_ul li div.line::after {
+            margin-left: 24px;
+            border-left: solid 6px #DDD; } }
+      .bookmarkList_ul li div.line::before {
+        content: "";
+        border-radius: 50%;
+        top: 36px;
+        left: 12px;
+        width: 10px;
+        height: 10px;
+        background-color: orange;
+        position: absolute;
+        z-index: 4;
+        -webkit-transform: translate(-3px, 0px);
+                transform: translate(-3px, 0px); }
+        @media screen and (min-width: 768px) {
+          .bookmarkList_ul li div.line::before {
+            width: 16px;
+            height: 16px;
+            top: 36px;
+            left: 24px;
+            -webkit-transform: translate(-5px, 0px);
+                    transform: translate(-5px, 0px); } }
+  .bookmarkList_ul li:first-child div.line::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    z-index: 2;
+    margin-top: 36px;
+    margin-left: 12px;
+    border-left: solid 3px #DDD; }
+    @media screen and (min-width: 768px) {
+      .bookmarkList_ul li:first-child div.line::after {
+        margin-top: 36px;
+        margin-left: 24px;
+        border-left: solid 6px #DDD; } }
+  .bookmarkList_ul li:last-child div.line::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    z-index: 2;
+    margin-bottom: 36px;
+    margin-left: 12px;
+    border-left: solid 3px #DDD; }
+    @media screen and (min-width: 768px) {
+      .bookmarkList_ul li:last-child div.line::after {
+        margin-bottom: 36px;
+        margin-left: 24px;
+        border-left: solid 6px #DDD; } }
+
+.bookmarkList_box1 {
+  flex-basis: 100%;
+  height: auto;
+  background-color: white; }
+  @media screen and (min-width: 768px) {
+    .bookmarkList_box1 {
+      flex-basis: 35%;
+      background-color: #EEE;
+      position: relative; } }
+
+.bookmarkList_box2 {
+  padding: 0 24px;
+  width: 100%;
+  border: none;
+  height: 300px; }
+  @media screen and (min-width: 768px) {
+    .bookmarkList_box2 {
+      flex-basis: 65%;
+      border-left: solid 1px #DDD;
+      padding: 36px 24px;
+      height: auto; } }
+
+.bookmarkList_content {
+  height: 100%;
+  position: relative;
+  padding: 36px 24px;
+  box-sizing: border-box; }
+  @media screen and (min-width: 768px) {
+    .bookmarkList_content {
+      padding: 36px 48px; } }
+
+@media screen and (min-width: 768px) {
+  .contentBox {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 36px; } }
+
+.bookmarkList_button {
+  position: absolute;
+  z-index: 10;
+  bottom: 0;
+  right: 16px; }
+
+.infoImage_box {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  overflow: hidden; }
+
+.image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 100%;
+  height: auto; }
+
+.title {
+  padding: 0;
+  margin-top: 0;
+  margin-bottom: 16px; }
+
+.siteName {
+  margin: 0; }

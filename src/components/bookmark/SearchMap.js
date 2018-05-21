@@ -17,7 +17,7 @@ const MapWithASearchBox = compose(
   withProps({
     googleMapURL: "https://maps.googleapis.com/maps/api/js?key=AIzaSyDAKPblvEWtasMJ-onhSesCJ4SbjwEaE9g&v=3.exp&libraries=geometry,drawing,places",
     loadingElement: <div style={{ height: `100%` }} />,
-    containerElement: <div style={{ height: `400px` }} />,
+    containerElement: <div style={{ height: `350px` }} />,
     mapElement: <div style={{ height: `100%` }} />,
   }),
   lifecycle({
@@ -56,6 +56,9 @@ const MapWithASearchBox = compose(
           const nextMarkers = places.map(place => ({
             position: place.geometry.location,
           }));
+          this.props.onChangeLat(places[0].geometry.location.lat());
+          this.props.onChangeLng(places[0].geometry.location.lng());
+
           const nextCenter = _.get(nextMarkers, '0.position', this.state.center);
 
           this.setState({
@@ -83,7 +86,8 @@ const MapWithASearchBox = compose(
     >
       <input
         type="text"
-        placeholder="Customized your placeholder"
+        placeholder="行きたい場所を検索"
+        onChange={(e) => props.onChangeSiteName(e.target.value)}
         style={{
           boxSizing: `border-box`,
           border: `1px solid transparent`,

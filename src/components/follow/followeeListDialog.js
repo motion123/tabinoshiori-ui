@@ -34,7 +34,7 @@ export default class FolloweeListDialog extends React.Component {
         secondary={true}
       >
       <Dialog
-        title="あなたがフォローしているユーザー"
+        title="フォロー"
         autoScrollBodyContent={true}
         contentClassName={styles.content}
         bodyClassName={styles.body}

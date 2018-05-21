@@ -9,9 +9,6 @@ import {
   GoogleMap,
   Marker,
 } from "react-google-maps";
-import createFragment from 'react-addons-create-fragment';
-
-
 
 const MapWithAMarker = compose(
   withScriptjs,

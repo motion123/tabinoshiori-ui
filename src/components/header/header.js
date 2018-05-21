@@ -9,7 +9,6 @@ import IconButton from 'material-ui/IconButton';
 import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
 import NavigationClose from 'material-ui/svg-icons/navigation/close';
 import Snackbar from '../../containers/addVideo/snackbar';
-import SearchForm from '../../containers/search/search';
 import styles from './header.css';
 
 const HeaderMenu = ({onClickSignOut}) => (
@@ -46,11 +45,7 @@ export default class Header extends React.Component {
           <div className={styles.title}>
             TEST
           </div>
-          <SearchForm/>
           <div className={styles.iconmenu}>
-            <HeaderMenu
-             onClickSignOut = {() => {onLoggedOut()}}
-            />
           </div>
         </div>
         <Snackbar/>

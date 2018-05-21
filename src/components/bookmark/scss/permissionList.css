@@ -1,0 +1,47 @@
+.container {
+  padding: 0 16px;
+  margin-top: 64px; }
+  @media screen and (min-width: 400px) {
+    .container {
+      padding: 0 7.5%; } }
+
+.box {
+  margin-bottom: 64px; }
+
+ul.List {
+  margin: 0;
+  padding: 0;
+  background-color: #170B3B; }
+  ul.List li {
+    padding: 8px 16px;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; }
+    ul.List li span {
+      margin-left: 12px;
+      color: orange;
+      font-weight: bold; }
+    ul.List li div {
+      display: flex;
+      align-items: center; }
+
+.headerBox {
+  color: orange;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  .headerBox h4 {
+    margin: 36px 0; }
+
+.height {
+  height: 100%; }
+
+.cont {
+  height: 100%;
+  background: #170B3B; }
+
+.editor {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0; }
